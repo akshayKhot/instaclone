@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'friend_requests/index'
+  get 'friend_requests/add_friend'
+  get 'friend_requests/accept'
+  get 'friend_requests/decline'
+  get 'friend_requests/pending'
+  get 'friend_requests/friends'
   devise_for :users
 
   devise_scope :user do

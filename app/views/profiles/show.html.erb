@@ -7,6 +7,12 @@
     <% end %>
   </p>
 
+  <% if current_user %>
+    <p>
+      <%= link_to "Pending friend requests", friend_requests_pending_path %>
+    </p>
+  <% end %>
+
   <% if @user.photos.empty? %>
     <p>There is still no photos to display.</p>
   <% else %>

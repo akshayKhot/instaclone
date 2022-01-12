@@ -4,11 +4,16 @@
     <%= text_field_tag :username %>
 
     <%= submit_tag 'Search' %>
-  <%end %>
+  <% end %>
 
   <% @users.each do |user| %>
     <p>
       <%= link_to user.username, profile_path(user.username) %>
+      <% if current_user %>
+        <% unless user == current_user %>
+          <%= link_to "Add Friend", friend_requests_add_friend_path(to: user.id) %>
+        <% end %>
+      <% end %>
     </p>
   <% end %>
 </div>

@@ -1,0 +1,6 @@
+<h1>You have <%= @pending_friend_requests.count %> friend requests</h1>
+
+<% @pending_friend_requests.each do |pending_friend_request| %>
+  <%= pending_friend_request.requestor.username %>
+  <%= link_to "Accept", friend_requests_accept_path(from: pending_friend_request.requestor.id) %>
+<% end %>
